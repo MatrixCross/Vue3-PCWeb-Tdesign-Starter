@@ -72,9 +72,6 @@
 
 <script setup lang="ts">
 import { FormRule, MessagePlugin } from 'tdesign-vue-next';
-import { ref } from 'vue';
-
-import { useCounter } from '@/hooks';
 
 const INITIAL_DATA = {
   phone: '',
@@ -101,7 +98,7 @@ const formData = ref({ ...INITIAL_DATA });
 
 const showPsw = ref(false);
 
-const [countDown, handleCounter] = useCounter();
+const [countDown, handleCounter] = useTimeCounter();
 
 const emit = defineEmits(['registerSuccess']);
 

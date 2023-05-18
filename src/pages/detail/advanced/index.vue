@@ -125,8 +125,6 @@ export default {
 </script>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
-
 import { getPurchaseList } from '@/api/detail';
 import { prefix } from '@/config/global';
 

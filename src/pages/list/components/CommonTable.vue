@@ -118,7 +118,6 @@ import {
   CONTRACT_TYPE_OPTIONS,
   CONTRACT_TYPES,
 } from '@/constants';
-import { useSettingStore } from '@/store';
 
 const store = useSettingStore();
 

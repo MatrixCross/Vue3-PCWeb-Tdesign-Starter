@@ -70,11 +70,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, nextTick, ref } from 'vue';
-import { useRoute, useRouter } from 'vue-router';
-
 import { prefix } from '@/config/global';
-import { useSettingStore, useTabsRouterStore } from '@/store';
 import type { TRouterInfo } from '@/types/interface';
 
 import LBreadcrumb from './Breadcrumb.vue';

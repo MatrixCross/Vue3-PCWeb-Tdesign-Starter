@@ -81,11 +81,9 @@ import { BarChart, LineChart } from 'echarts/charts';
 import { GridComponent, LegendComponent, TitleComponent, ToolboxComponent, TooltipComponent } from 'echarts/components';
 import * as echarts from 'echarts/core';
 import { CanvasRenderer } from 'echarts/renderers';
-import { computed, onMounted, onUnmounted, ref, watch } from 'vue';
 
 import { getProjectList } from '@/api/detail';
 import { prefix } from '@/config/global';
-import { useSettingStore } from '@/store';
 import { changeChartsTheme } from '@/utils/color';
 
 import { BASE_INFO_DATA, TABLE_COLUMNS as columns } from './constants';

@@ -16,8 +16,7 @@
 </template>
 
 <script setup lang="ts">
-import LogoFullIcon from '@/assets/assets-logo-full.svg?component';
-import { useSettingStore } from '@/store';
+import LogoFullIcon from '~icons/custom/assets-logo-full';
 
 const settingStore = useSettingStore();
 const toggleSettingPanel = () => {

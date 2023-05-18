@@ -11,12 +11,6 @@
 </template>
 
 <script setup lang="ts">
-import { storeToRefs } from 'pinia';
-import { computed } from 'vue';
-import { useRoute } from 'vue-router';
-
-import { usePermissionStore, useSettingStore } from '@/store';
-
 import LSideNav from './SideNav.vue';
 
 const route = useRoute();

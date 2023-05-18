@@ -165,7 +165,6 @@ export default {
 
 <script setup lang="ts">
 import { MessagePlugin } from 'tdesign-vue-next';
-import { ref } from 'vue';
 
 import { FORM_RULES, INITIAL_DATA, PARTY_A_OPTIONS, PARTY_B_OPTIONS, TYPE_OPTIONS } from './constants';
 

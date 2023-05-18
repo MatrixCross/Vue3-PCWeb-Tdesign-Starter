@@ -26,12 +26,7 @@
 <script setup lang="ts">
 import '@/style/layout.less';
 
-import { storeToRefs } from 'pinia';
-import { computed, onMounted, watch } from 'vue';
-import { useRoute } from 'vue-router';
-
 import { prefix } from '@/config/global';
-import { useSettingStore, useTabsRouterStore } from '@/store';
 
 import LayoutContent from './components/LayoutContent.vue';
 import LayoutHeader from './components/LayoutHeader.vue';

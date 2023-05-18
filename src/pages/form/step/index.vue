@@ -148,8 +148,6 @@ export default {
 
 <script setup lang="ts">
 import { Data, SubmitContext } from 'tdesign-vue-next';
-import { computed, ref } from 'vue';
-import { useRouter } from 'vue-router';
 
 import {
   ADDRESS_OPTIONS,

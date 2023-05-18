@@ -59,11 +59,9 @@ import { BarChart, LineChart } from 'echarts/charts';
 import * as echarts from 'echarts/core';
 import { CanvasRenderer } from 'echarts/renderers';
 import { FileIcon, UsergroupIcon } from 'tdesign-icons-vue-next';
-import { nextTick, onMounted, onUnmounted, ref, watch } from 'vue';
 
 // 导入样式
 import Trend from '@/components/trend/index.vue';
-import { useSettingStore } from '@/store';
 import { changeChartsTheme } from '@/utils/color';
 
 import { PANE_LIST } from '../constants';

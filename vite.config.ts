@@ -1,9 +1,16 @@
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import path from 'path';
+import unocss from 'unocss/vite';
+import autoImport from 'unplugin-auto-import/vite';
+import { FileSystemIconLoader } from 'unplugin-icons/loaders';
+import IconsResolver from 'unplugin-icons/resolver';
+import icons from 'unplugin-icons/vite';
+import { TDesignResolver } from 'unplugin-vue-components/resolvers';
+import components from 'unplugin-vue-components/vite';
+import { fileURLToPath, URL } from 'url';
 import { ConfigEnv, loadEnv, UserConfig } from 'vite';
 import { viteMockServe } from 'vite-plugin-mock';
-import svgLoader from 'vite-svg-loader';
 
 const CWD = process.cwd();
 
@@ -33,11 +40,43 @@ export default ({ mode }: ConfigEnv): UserConfig => {
     plugins: [
       vue(),
       vueJsx(),
+      unocss(),
       viteMockServe({
         mockPath: 'mock',
-        localEnabled: true,
+        enable: true,
       }),
-      svgLoader(),
+      autoImport({
+        dts: './src/types/auto-imports.d.ts',
+        imports: ['vue', 'vue-router', 'pinia', '@vueuse/core'],
+        dirs: ['./src/store', './src/hooks/**'],
+        resolvers: [
+          TDesignResolver({
+            library: 'vue-next',
+          }),
+        ],
+        eslintrc: {
+          enabled: true,
+        },
+      }),
+      components({
+        dts: './src/types/components.d.ts',
+        types: [{ from: 'vue-router', names: ['RouterLink', 'RouterView'] }],
+        resolvers: [
+          TDesignResolver({
+            library: 'vue-next',
+          }),
+          IconsResolver({
+            customCollections: ['custom'],
+          }),
+        ],
+      }),
+      icons({
+        autoInstall: true,
+        compiler: 'vue3',
+        customCollections: {
+          custom: FileSystemIconLoader(fileURLToPath(new URL('./src/assets', import.meta.url))),
+        },
+      }),
     ],
 
     server: {

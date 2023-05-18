@@ -25,9 +25,6 @@
   </div>
 </template>
 <script setup lang="tsx">
-import type { PropType } from 'vue';
-import { computed } from 'vue';
-
 import { getActive } from '@/router';
 import type { MenuRoute } from '@/types/interface';
 

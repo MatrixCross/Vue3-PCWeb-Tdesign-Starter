@@ -36,7 +36,6 @@
 
 <script setup lang="ts">
 import { Data, FormRule, MessagePlugin, SubmitContext } from 'tdesign-vue-next';
-import { ref, watch } from 'vue';
 
 const INITIAL_DATA = {
   name: '',

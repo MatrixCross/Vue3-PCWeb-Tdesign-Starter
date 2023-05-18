@@ -64,14 +64,8 @@
 </template>
 
 <script setup lang="ts">
-import type { PropType } from 'vue';
-import { computed } from 'vue';
-import { useRouter } from 'vue-router';
-
-import LogoFull from '@/assets/assets-logo-full.svg?component';
 import { prefix } from '@/config/global';
 import { getActive } from '@/router';
-import { useSettingStore, useUserStore } from '@/store';
 import type { MenuRoute } from '@/types/interface';
 
 import MenuContent from './MenuContent.vue';

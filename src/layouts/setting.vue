@@ -94,17 +94,15 @@
 <script setup lang="ts">
 import type { PopupVisibleChangeContext } from 'tdesign-vue-next';
 import { MessagePlugin } from 'tdesign-vue-next';
-import { computed, onMounted, ref, watchEffect } from 'vue';
 import useClipboard from 'vue-clipboard3';
 
-import SettingAutoIcon from '@/assets/assets-setting-auto.svg';
-import SettingDarkIcon from '@/assets/assets-setting-dark.svg';
-import SettingLightIcon from '@/assets/assets-setting-light.svg';
 import ColorContainer from '@/components/color/index.vue';
 import Thumbnail from '@/components/thumbnail/index.vue';
 import { DEFAULT_COLOR_OPTIONS } from '@/config/color';
 import STYLE_CONFIG from '@/config/style';
-import { useSettingStore } from '@/store';
+import SettingAutoIcon from '~icons/custom/assets-setting-auto';
+import SettingDarkIcon from '~icons/custom/assets-setting-dark';
+import SettingLightIcon from '~icons/custom/assets-setting-light';
 
 const settingStore = useSettingStore();
 

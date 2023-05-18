@@ -17,16 +17,12 @@
 
 <script setup lang="ts">
 import union from 'lodash/union';
-import type { PropType } from 'vue';
-import { computed, onMounted } from 'vue';
-import { useRouter } from 'vue-router';
 
-import AssetLogoFull from '@/assets/assets-logo-full.svg?component';
-import AssetLogo from '@/assets/assets-t-logo.svg?component';
 import { prefix } from '@/config/global';
 import { getActive, getRoutesExpanded } from '@/router';
-import { useSettingStore } from '@/store';
 import type { MenuRoute } from '@/types/interface';
+import AssetLogoFull from '~icons/custom/assets-logo-full';
+import AssetLogo from '~icons/custom/assets-t-logo';
 
 import pgk from '../../../package.json';
 import MenuContent from './MenuContent.vue';

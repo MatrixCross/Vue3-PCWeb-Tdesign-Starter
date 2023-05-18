@@ -98,15 +98,13 @@ import { LineChart } from 'echarts/charts';
 import { GridComponent, LegendComponent, TooltipComponent } from 'echarts/components';
 import * as echarts from 'echarts/core';
 import { CanvasRenderer } from 'echarts/renderers';
-import { computed, nextTick, onMounted, onUnmounted, watch } from 'vue';
 
-import ProductAIcon from '@/assets/assets-product-1.svg';
-import ProductBIcon from '@/assets/assets-product-2.svg';
-import ProductCIcon from '@/assets/assets-product-3.svg';
-import ProductDIcon from '@/assets/assets-product-4.svg';
-import { useSettingStore } from '@/store';
 import { changeChartsTheme } from '@/utils/color';
 import { LAST_7_DAYS } from '@/utils/date';
+import ProductAIcon from '~icons/custom/assets-product-1';
+import ProductBIcon from '~icons/custom/assets-product-2';
+import ProductCIcon from '~icons/custom/assets-product-3';
+import ProductDIcon from '~icons/custom/assets-product-4';
 
 import { PRODUCT_LIST, TEAM_MEMBERS, USER_INFO_LIST } from './constants';
 import { getFolderLineDataSet } from './index';

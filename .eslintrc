@@ -5,7 +5,8 @@
     "@vue/typescript/recommended",
     "plugin:vue/vue3-recommended",
     "plugin:vue-scoped-css/base",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "./.eslintrc-auto-import.json"
   ],
   "env": {
     "browser": true,
@@ -17,7 +18,11 @@
     "defineProps": "readonly",
     "defineEmits": "readonly"
   },
-  "plugins": ["vue", "@typescript-eslint", "simple-import-sort"],
+  "plugins": [
+    "vue",
+    "@typescript-eslint",
+    "simple-import-sort"
+  ],
   "parserOptions": {
     "parser": "@typescript-eslint/parser",
     "sourceType": "module",
@@ -27,7 +32,12 @@
     }
   },
   "settings": {
-    "import/extensions": [".js", ".jsx", ".ts", ".tsx"]
+    "import/extensions": [
+      ".js",
+      ".jsx",
+      ".ts",
+      ".tsx"
+    ]
   },
   "rules": {
     "no-console": "off",
@@ -37,7 +47,6 @@
     "no-param-reassign": "off",
     "no-shadow": "off",
     "guard-for-in": "off",
-
     "import/extensions": "off",
     "import/no-unresolved": "off",
     "import/no-extraneous-dependencies": "off",
@@ -46,7 +55,6 @@
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "vue/first-attribute-linebreak": 0,
-
     "@typescript-eslint/no-unused-vars": [
       "error",
       {
@@ -71,18 +79,33 @@
   },
   "overrides": [
     {
-      "files": ["*.vue"],
+      "files": [
+        "*.vue"
+      ],
       "rules": {
-        "vue/component-name-in-template-casing": [2, "kebab-case"],
+        "vue/component-name-in-template-casing": [
+          2,
+          "kebab-case"
+        ],
         "vue/require-default-prop": 0,
         "vue/multi-word-component-names": 0,
         "vue/no-reserved-props": 0,
         "vue/no-v-html": 0,
-        "vue-scoped-css/enforce-style-type": ["error", { "allows": ["scoped"] }]
+        "vue-scoped-css/enforce-style-type": [
+          "error",
+          {
+            "allows": [
+              "scoped"
+            ]
+          }
+        ]
       }
     },
     {
-      "files": ["*.ts", "*.tsx"], // https://github.com/typescript-eslint eslint-recommended
+      "files": [
+        "*.ts",
+        "*.tsx"
+      ], // https://github.com/typescript-eslint eslint-recommended
       "rules": {
         "constructor-super": "off", // ts(2335) & ts(2377)
         "getter-return": "off", // ts(2378)

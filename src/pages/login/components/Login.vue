@@ -82,11 +82,6 @@
 import QrcodeVue from 'qrcode.vue';
 import type { FormInstanceFunctions, FormRule } from 'tdesign-vue-next';
 import { MessagePlugin } from 'tdesign-vue-next';
-import { ref } from 'vue';
-import { useRoute, useRouter } from 'vue-router';
-
-import { useCounter } from '@/hooks';
-import { useUserStore } from '@/store';
 
 const userStore = useUserStore();
 
@@ -111,7 +106,7 @@ const form = ref<FormInstanceFunctions>();
 const formData = ref({ ...INITIAL_DATA });
 const showPsw = ref(false);
 
-const [countDown, handleCounter] = useCounter();
+const [countDown, handleCounter] = useTimeCounter();
 
 const switchType = (val: string) => {
   type.value = val;
