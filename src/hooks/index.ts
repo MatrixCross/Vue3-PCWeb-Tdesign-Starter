@@ -1,5 +1,5 @@
 import * as echarts from 'echarts/core';
-import { onMounted, onUnmounted, Ref, ref } from 'vue';
+import { Ref } from 'vue';
 
 /**
  * eChart hook

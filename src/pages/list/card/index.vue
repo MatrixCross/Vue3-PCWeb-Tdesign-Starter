@@ -69,7 +69,6 @@ export default {
 
 <script setup lang="ts">
 import { SearchIcon } from 'tdesign-icons-vue-next';
-import { MessagePlugin } from 'tdesign-vue-next';
 
 import { getCardList } from '@/api/list';
 import type { CardProductType } from '@/components/product-card/index.vue';

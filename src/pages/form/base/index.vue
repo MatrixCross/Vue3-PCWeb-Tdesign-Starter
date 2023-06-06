@@ -165,7 +165,6 @@ export default {
 
 <script setup lang="ts">
 import type { SubmitContext, UploadFailContext, UploadFile } from 'tdesign-vue-next';
-import { MessagePlugin } from 'tdesign-vue-next';
 
 import { FORM_RULES, INITIAL_DATA, PARTY_A_OPTIONS, PARTY_B_OPTIONS, TYPE_OPTIONS } from './constants';
 

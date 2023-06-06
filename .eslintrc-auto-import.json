@@ -306,6 +306,7 @@
     "watchTriggerable": true,
     "watchWithFilter": true,
     "whenever": true,
-    "toValue": true
+    "toValue": true,
+    "MessagePlugin": true
   }
 }

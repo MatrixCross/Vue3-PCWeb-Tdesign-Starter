@@ -47,13 +47,16 @@ export default ({ mode }: ConfigEnv): UserConfig => {
       }),
       autoImport({
         dts: './src/types/auto-imports.d.ts',
-        imports: ['vue', 'vue-router', 'pinia', '@vueuse/core'],
-        dirs: ['./src/store', './src/hooks/**'],
-        resolvers: [
-          TDesignResolver({
-            library: 'vue-next',
-          }),
+        imports: [
+          'vue',
+          'vue-router',
+          'pinia',
+          '@vueuse/core',
+          {
+            'tdesign-vue-next': ['MessagePlugin'],
+          },
         ],
+        dirs: ['./src/store', './src/hooks/**'],
         eslintrc: {
           enabled: true,
         },

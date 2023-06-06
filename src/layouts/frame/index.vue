@@ -6,8 +6,6 @@
   </div>
 </template>
 <script lang="ts">
-import { computed, defineComponent, unref } from 'vue';
-
 import FrameContent from '../components/FrameContent.vue';
 import { useFrameKeepAlive } from './useFrameKeepAlive';
 

@@ -72,7 +72,6 @@
 
 <script setup lang="ts">
 import type { FormRule, SubmitContext } from 'tdesign-vue-next';
-import { MessagePlugin } from 'tdesign-vue-next';
 
 const INITIAL_DATA = {
   phone: '',

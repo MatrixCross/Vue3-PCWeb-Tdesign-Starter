@@ -75,7 +75,6 @@ export default {
 
 <script setup lang="ts">
 import { SearchIcon } from 'tdesign-icons-vue-next';
-import { MessagePlugin } from 'tdesign-vue-next';
 
 import { getList } from '@/api/list';
 import Trend from '@/components/trend/index.vue';

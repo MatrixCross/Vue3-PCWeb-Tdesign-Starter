@@ -93,7 +93,6 @@
 </template>
 <script setup lang="ts">
 import type { PopupVisibleChangeContext } from 'tdesign-vue-next';
-import { MessagePlugin } from 'tdesign-vue-next';
 import useClipboard from 'vue-clipboard3';
 
 import ColorContainer from '@/components/color/index.vue';

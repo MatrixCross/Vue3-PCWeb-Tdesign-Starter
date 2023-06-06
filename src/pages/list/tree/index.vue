@@ -24,7 +24,7 @@ export default {
 
 <script setup lang="ts">
 import { SearchIcon } from 'tdesign-icons-vue-next';
-import type { TreeNodeModel } from 'tdesign-vue-next';
+import { TreeNodeModel } from 'tdesign-vue-next';
 
 import CommonTable from '../components/CommonTable.vue';
 import { TREE_DATA } from './constants';

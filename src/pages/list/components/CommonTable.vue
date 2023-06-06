@@ -105,8 +105,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { MessagePlugin, PageInfo, PrimaryTableCol, TableRowData } from 'tdesign-vue-next';
-import { computed, onMounted, ref } from 'vue';
+import { PageInfo, PrimaryTableCol, TableRowData } from 'tdesign-vue-next';
 
 import { getList } from '@/api/list';
 import Trend from '@/components/trend/index.vue';

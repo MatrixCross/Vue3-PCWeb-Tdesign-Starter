@@ -35,7 +35,7 @@
 </template>
 
 <script setup lang="ts">
-import { Data, FormRule, MessagePlugin, SubmitContext } from 'tdesign-vue-next';
+import { Data, FormRule, SubmitContext } from 'tdesign-vue-next';
 
 const INITIAL_DATA = {
   name: '',
