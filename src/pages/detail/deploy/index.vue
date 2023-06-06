@@ -145,8 +145,6 @@ onMounted(() => {
   dataChart.setOption(get2ColBarChartDataSet({ ...chartColors.value }));
 });
 
-const intervalTimer = null;
-
 /// / chartSize update
 const updateContainer = () => {
   monitorChart.resize({
@@ -161,7 +159,6 @@ const updateContainer = () => {
 
 onUnmounted(() => {
   window.removeEventListener('resize', updateContainer);
-  clearInterval(intervalTimer);
 });
 
 const onAlertChange = () => {
@@ -180,10 +177,10 @@ watch(
   },
 );
 
-const sortChange = (val) => {
+const sortChange = (val: unknown) => {
   console.log(val);
 };
-const rehandleChange = (changeParams, triggerAndData) => {
+const rehandleChange = (changeParams: unknown, triggerAndData: unknown) => {
   console.log('统一Change', changeParams, triggerAndData);
 };
 const listClick = () => {
@@ -192,7 +189,7 @@ const listClick = () => {
 const onConfirm = () => {
   visible.value = false;
 };
-const deleteClickOp = (e) => {
+const deleteClickOp = (e: { rowIndex: number }) => {
   data.value.splice(e.rowIndex, 1);
 };
 </script>

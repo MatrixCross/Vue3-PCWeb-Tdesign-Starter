@@ -24,6 +24,7 @@ export default {
 
 <script setup lang="ts">
 import { SearchIcon } from 'tdesign-icons-vue-next';
+import type { TreeNodeModel } from 'tdesign-vue-next';
 
 import CommonTable from '../components/CommonTable.vue';
 import { TREE_DATA } from './constants';
@@ -34,9 +35,8 @@ const filterText = ref();
 const expanded = ['0', '0-0', '0-1', '0-2', '0-3', '0-4'];
 
 const onInput = () => {
-  filterByText.value = (node) => {
-    const rs = node.label.indexOf(filterText.value) >= 0;
-    return rs;
+  filterByText.value = (node: TreeNodeModel) => {
+    return node.label.indexOf(filterText.value) >= 0;
   };
 };
 </script>
