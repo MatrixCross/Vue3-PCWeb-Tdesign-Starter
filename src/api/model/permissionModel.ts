@@ -1,5 +1,3 @@
-import { defineComponent } from 'vue';
-
 export interface MenuListResult {
   list: Array<RouteItem>;
 }

@@ -1,5 +1,3 @@
-import { defineStore } from 'pinia';
-
 import { usePermissionStore } from '@/store';
 import type { UserInfo } from '@/types/interface';
 

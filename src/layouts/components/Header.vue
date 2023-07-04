@@ -3,7 +3,7 @@
     <t-head-menu :class="menuCls" :theme="menuTheme" expand-type="popup" :value="active">
       <template #logo>
         <span v-if="showLogo" class="header-logo-container" @click="handleNav('/dashboard/base')">
-          <logo-full class="t-logo" />
+          <logo-full-icon class="t-logo" />
         </span>
         <div v-else class="header-operate-left">
           <t-button theme="default" shape="square" variant="text" @click="changeCollapsed">
@@ -67,6 +67,7 @@
 import { prefix } from '@/config/global';
 import { getActive } from '@/router';
 import type { MenuRoute } from '@/types/interface';
+import LogoFullIcon from '~icons/custom/assets-logo-full';
 
 import MenuContent from './MenuContent.vue';
 import Notice from './Notice.vue';

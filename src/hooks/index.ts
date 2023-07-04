@@ -1,5 +1,4 @@
 import * as echarts from 'echarts/core';
-import { Ref } from 'vue';
 
 /**
  * eChart hook

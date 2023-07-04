@@ -59,6 +59,7 @@ export default {
 <script setup lang="ts">
 import { NOTIFICATION_TYPES } from '@/constants';
 import type { NotificationItem } from '@/types/interface';
+import EmptyIcon from '~icons/custom/assets-empty';
 
 const TAB_LIST = [
   {

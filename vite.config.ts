@@ -1,6 +1,7 @@
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import path from 'path';
+import unimport from 'unimport/unplugin';
 import unocss from 'unocss/vite';
 import autoImport from 'unplugin-auto-import/vite';
 import { FileSystemIconLoader } from 'unplugin-icons/loaders';
@@ -43,7 +44,7 @@ export default ({ mode }: ConfigEnv): UserConfig => {
       unocss(),
       viteMockServe({
         mockPath: 'mock',
-        enable: true,
+        localEnabled: true,
       }),
       autoImport({
         dts: './src/types/auto-imports.d.ts',
@@ -79,6 +80,11 @@ export default ({ mode }: ConfigEnv): UserConfig => {
         customCollections: {
           custom: FileSystemIconLoader(fileURLToPath(new URL('./src/assets', import.meta.url))),
         },
+      }),
+      unimport.vite({
+        dts: './src/types/unimport.d.ts',
+        presets: ['vue', 'pinia', 'vue-router'],
+        imports: [{ name: 'default', as: 'dayjs', from: 'dayjs' }],
       }),
     ],
 

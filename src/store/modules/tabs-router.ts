@@ -1,5 +1,3 @@
-import { defineStore } from 'pinia';
-
 import { store } from '@/store';
 import type { TRouterInfo, TTabRouterType } from '@/types/interface';
 

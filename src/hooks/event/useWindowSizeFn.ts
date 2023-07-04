@@ -1,5 +1,4 @@
 import debounce from 'lodash/debounce';
-import { onMounted, onUnmounted } from 'vue';
 
 interface WindowSizeOptions {
   immediate?: boolean;

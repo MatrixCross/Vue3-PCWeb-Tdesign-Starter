@@ -1,4 +1,3 @@
-import { defineStore } from 'pinia';
 import { RouteRecordRaw } from 'vue-router';
 
 import { RouteItem } from '@/api/model/permissionModel';

@@ -1,5 +1,4 @@
 import keys from 'lodash/keys';
-import { defineStore } from 'pinia';
 import { Color } from 'tvision-color';
 
 import { DARK_CHART_COLORS, LIGHT_CHART_COLORS } from '@/config/color';
