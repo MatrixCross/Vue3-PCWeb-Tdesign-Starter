@@ -1,3 +1,5 @@
+import { RouteMeta } from '@/types/interface';
+
 export interface MenuListResult {
   list: Array<RouteItem>;
 }

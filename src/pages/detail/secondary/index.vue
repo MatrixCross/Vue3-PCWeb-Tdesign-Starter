@@ -18,14 +18,14 @@
                   <t-tooltip
                     class="set-read-icon"
                     :overlay-style="{ margin: '6px' }"
-                    :content="item.status ? '设为已读' : '设为未读'"
+                    :content="item.status ? $t('pages.detailSecondary.setRead') : $t('pages.detailSecondary.setUnread')"
                   >
                     <span class="msg-action-icon" @click="setReadStatus(item)">
                       <t-icon v-if="!!item.status" name="queue" size="16px" />
                       <t-icon v-else name="chat" />
                     </span>
                   </t-tooltip>
-                  <t-tooltip content="删除通知" :overlay-style="{ margin: '6px' }">
+                  <t-tooltip :content="$t('pages.detailSecondary.delete')" :overlay-style="{ margin: '6px' }">
                     <span @click="handleClickDeleteBtn(item)">
                       <t-icon name="delete" size="16px" />
                     </span>
@@ -36,7 +36,7 @@
           </t-list>
           <div v-else class="secondary-msg-list__empty-list">
             <empty-icon></empty-icon>
-            <p>暂无通知</p>
+            <p>{{ $t('pages.detailSecondary.empty') }}</p>
           </div>
         </t-tab-panel>
       </t-tabs>
@@ -63,15 +63,15 @@ import EmptyIcon from '~icons/custom/assets-empty';
 
 const TAB_LIST = [
   {
-    label: '全部通知',
+    label: t('pages.detailSecondary.all'),
     value: 'msgData',
   },
   {
-    label: '未读通知',
+    label: t('pages.detailSecondary.unread'),
     value: 'unreadMsg',
   },
   {
-    label: '已读通知',
+    label: t('pages.detailSecondary.read'),
     value: 'readMsg',
   },
 ];
@@ -120,5 +120,5 @@ const deleteMsg = () => {
 </script>
 
 <style lang="less" scoped>
-@import url('./index.less');
+@import './index.less';
 </style>

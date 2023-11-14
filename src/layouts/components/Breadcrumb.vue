@@ -7,6 +7,10 @@
 </template>
 
 <script setup lang="ts">
+import { RouteMeta } from '@/types/interface';
+
+const { locale } = useLocale();
+
 const crumbs = computed(() => {
   const route = useRoute();
 
@@ -15,14 +19,22 @@ const crumbs = computed(() => {
 
   const breadcrumbs = pathArray.reduce((breadcrumbArray, path, idx) => {
     // 如果路由下有hiddenBreadcrumb或当前遍历到参数则隐藏
-    if (route.matched[idx]?.meta?.hiddenBreadcrumb || Object.values(route.params).includes(path)) {
+    const meta = route.matched[idx]?.meta as RouteMeta;
+    if (meta?.hiddenBreadcrumb || Object.values(route.params).includes(path)) {
       return breadcrumbArray;
     }
-
+    let title = path;
+    if (meta?.title) {
+      if (typeof meta.title === 'string') {
+        title = meta.title;
+      } else {
+        title = meta.title[locale.value];
+      }
+    }
     breadcrumbArray.push({
       path,
       to: breadcrumbArray[idx - 1] ? `/${breadcrumbArray[idx - 1].path}/${path}` : `/${path}`,
-      title: route.matched[idx]?.meta?.title ?? path,
+      title,
     });
     return breadcrumbArray;
   }, []);

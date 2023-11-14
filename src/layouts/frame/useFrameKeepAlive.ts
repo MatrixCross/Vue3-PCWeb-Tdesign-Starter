@@ -1,6 +1,5 @@
 import uniqBy from 'lodash/uniqBy';
 
-import { useSettingStore, useTabsRouterStore } from '@/store';
 import type { MenuRoute } from '@/types/interface';
 
 export function useFrameKeepAlive() {

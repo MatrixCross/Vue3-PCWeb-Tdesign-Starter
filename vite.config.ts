@@ -1,6 +1,7 @@
+import path from 'node:path';
+
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
-import path from 'path';
 import unimport from 'unimport/unplugin';
 import unocss from 'unocss/vite';
 import autoImport from 'unplugin-auto-import/vite';
@@ -44,7 +45,7 @@ export default ({ mode }: ConfigEnv): UserConfig => {
       unocss(),
       viteMockServe({
         mockPath: 'mock',
-        localEnabled: true,
+        enable: true,
       }),
       autoImport({
         dts: './src/types/auto-imports.d.ts',
@@ -53,11 +54,12 @@ export default ({ mode }: ConfigEnv): UserConfig => {
           'vue-router',
           'pinia',
           '@vueuse/core',
+          'vue-i18n',
           {
             'tdesign-vue-next': ['MessagePlugin'],
           },
         ],
-        dirs: ['./src/store', './src/hooks/**'],
+        dirs: ['./src/store', './src/hooks/**', './src/locales', './src/locales/useLocale'],
         eslintrc: {
           enabled: true,
         },
@@ -83,8 +85,12 @@ export default ({ mode }: ConfigEnv): UserConfig => {
       }),
       unimport.vite({
         dts: './src/types/unimport.d.ts',
-        presets: ['vue', 'pinia', 'vue-router'],
-        imports: [{ name: 'default', as: 'dayjs', from: 'dayjs' }],
+        presets: ['vue', 'pinia', 'vue-router', 'vue-i18n'],
+        imports: [
+          { name: 'default', as: 'dayjs', from: 'dayjs' },
+          { name: 't', from: '@/locales' },
+          { name: 'useLocale', from: '@/locales/useLocale' },
+        ],
       }),
     ],
 

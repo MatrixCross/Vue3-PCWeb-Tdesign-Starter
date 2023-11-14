@@ -24,34 +24,35 @@
             :min-column-width="128"
             :popup-props="{
               overlayClassName: 'route-tabs-dropdown',
-              onVisibleChange: (visible: boolean, ctx: PopupVisibleChangeContext) => handleTabMenuClick(visible, ctx, routeItem.path),
+              onVisibleChange: (visible: boolean, ctx: PopupVisibleChangeContext) =>
+                handleTabMenuClick(visible, ctx, routeItem.path),
               visible: activeTabPath === routeItem.path,
             }"
           >
             <template v-if="!routeItem.isHome">
-              {{ routeItem.title }}
+              {{ renderTitle(routeItem.title) }}
             </template>
             <t-icon v-else name="home" />
             <template #dropdown>
               <t-dropdown-menu>
                 <t-dropdown-item @click="() => handleRefresh(routeItem, index)">
                   <t-icon name="refresh" />
-                  刷新
+                  {{ $t('layout.tagTabs.refresh') }}
                 </t-dropdown-item>
                 <t-dropdown-item v-if="index > 1" @click="() => handleCloseAhead(routeItem.path, index)">
                   <t-icon name="arrow-left" />
-                  关闭左侧
+                  {{ $t('layout.tagTabs.closeLeft') }}
                 </t-dropdown-item>
                 <t-dropdown-item
                   v-if="index < tabRouters.length - 1"
                   @click="() => handleCloseBehind(routeItem.path, index)"
                 >
                   <t-icon name="arrow-right" />
-                  关闭右侧
+                  {{ $t('layout.tagTabs.closeRight') }}
                 </t-dropdown-item>
                 <t-dropdown-item v-if="tabRouters.length > 2" @click="() => handleCloseOther(routeItem.path, index)">
                   <t-icon name="close-circle" />
-                  关闭其它
+                  {{ $t('layout.tagTabs.closeOther') }}
                 </t-dropdown-item>
               </t-dropdown-menu>
             </template>
@@ -87,6 +88,8 @@ const tabsRouterStore = useTabsRouterStore();
 const tabRouters = computed(() => tabsRouterStore.tabRouters.filter((route) => route.isAlive || route.isHome));
 const activeTabPath = ref('');
 
+const { locale } = useLocale();
+
 const handleChangeCurrentTab = (path: string) => {
   const { tabRouters } = tabsRouterStore;
   const route = tabRouters.find((i) => i.path === path);
@@ -101,6 +104,10 @@ const handleRemove = (options: TTabRemoveOptions) => {
   if ((options.value as string) === route.path) router.push({ path: nextRouter.path, query: nextRouter.query });
 };
 
+const renderTitle = (title: string | Record<string, string>) => {
+  if (typeof title === 'string') return title;
+  return title[locale.value];
+};
 const handleRefresh = (route: TRouterInfo, routeIdx: number) => {
   tabsRouterStore.toggleTabRouterAlive(routeIdx);
   nextTick(() => {

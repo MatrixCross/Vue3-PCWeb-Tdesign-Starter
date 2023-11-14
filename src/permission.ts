@@ -4,7 +4,6 @@ import NProgress from 'nprogress'; // progress bar
 import { RouteRecordRaw } from 'vue-router';
 
 import router from '@/router';
-import { getPermissionStore, useUserStore } from '@/store';
 import { PAGE_NOT_FOUND_ROUTE } from '@/utils/route/constant';
 
 NProgress.configure({ showSpinner: false });
